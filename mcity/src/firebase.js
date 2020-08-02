@@ -19,6 +19,9 @@
 
 
 const dataBase = firebase.database();
+const dataBaseMatches = dataBase.ref('matches');
 
-dataBase.ref('matches').once('value'
-  ).then((snapshot)=>{console.log(snapshot.val())});
+export {
+  firebase,
+  dataBaseMatches,
+}
