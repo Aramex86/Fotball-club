@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {dataBaseMatches} from '../../../firebase';
 import {firebaseLooper, reverseArray} from '../../common/ConvertFunction';
+import MatchesBlock from '../../common/MatchesBlock';
+import Slide from 'react-reveal/Slide'; 
 
  class MatchesBlocks extends Component {
 
@@ -19,11 +21,17 @@ import {firebaseLooper, reverseArray} from '../../common/ConvertFunction';
         });
     }
 
-    showMatches =()=>{
-       return <div>
-            match
-        </div>
-    }
+    showMatches =(matches)=>(
+        matches? matches.map((match)=>(
+            <Slide bottom key={match.id}>
+            <div className='item' >
+                <div className='wrapper'>
+                    <MatchesBlock  match={match}/>
+                </div>
+            </div>
+            </Slide>
+        )):''
+    )
 
 
     render() {

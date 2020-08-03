@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/images/logos/manchester_city_logo.png';
+import logo from '../../images/logos/manchester_city_logo.png';
 
 
 const Logo =(props)=> {
