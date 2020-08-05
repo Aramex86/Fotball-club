@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {easePolyOut} from 'd3-ease';
-import Animate from 'react-move/Animate';
+import React, { Component } from "react";
+import { easePolyOut } from "d3-ease";
+import Animate from "react-move/Animate";
 
-import FeaturedPlayer from '../../../images/featured_player.png';  
+import FeaturedPlayer from "../../../images/featured_player.png";
 class Text extends Component {
   animateNumber = () => (
     <Animate
@@ -14,10 +14,10 @@ class Text extends Component {
       enter={{
         opacity: [1],
         rotate: [360],
-        timing: {duration: 1000, ease: easePolyOut},
+        timing: { duration: 1000, ease: easePolyOut },
       }}
     >
-      {({opacity, rotate}) => {
+      {({ opacity, rotate }) => {
         return (
           <div
             className="featured_number"
@@ -45,10 +45,10 @@ class Text extends Component {
         opacity: [1],
         x: [273],
         y: [450],
-        timing: {duration: 500, ease: easePolyOut},
+        timing: { duration: 500, ease: easePolyOut },
       }}
     >
-      {({opacity, x, y}) => {
+      {({ opacity, x, y }) => {
         return (
           <div
             className="featured_first"
@@ -76,10 +76,10 @@ class Text extends Component {
         opacity: [1],
         x: [273],
         y: [586],
-        timing: {delay: 300, duration: 500, ease: easePolyOut},
+        timing: { delay: 300, duration: 500, ease: easePolyOut },
       }}
     >
-      {({opacity, x, y}) => {
+      {({ opacity, x, y }) => {
         return (
           <div
             className="featured_second"
@@ -103,10 +103,10 @@ class Text extends Component {
       }}
       enter={{
         opacity: [1],
-        timing: {delay: 800, duration: 500, ease: easePolyOut},
+        timing: { delay: 800, duration: 500, ease: easePolyOut },
       }}
     >
-      {({opacity}) => {
+      {({ opacity }) => {
         return (
           <div
             className="featured_player"

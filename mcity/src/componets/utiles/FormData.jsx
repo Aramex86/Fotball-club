@@ -1,36 +1,41 @@
-import React from 'react'
+import React from "react";
 
-const FormData = ({formdata,id}) => {
-    console.log(formdata);
-const renderTemplate=()=>{
-    let formTemplate =null;
+const FormData = ({ formdata, id, change }) => {
 
-    switch(formdata.email.element){
-        case('input'):
+  const showError=()=>{
+    let errorMessage = <div className="error_label">
+        {
+          formdata.validation && !formdata.valid?formdata.validationMessage:null
+        }
+    </div>
+
+    return errorMessage;
+  }
+
+  const renderTemplate = () => {
+    let formTemplate = null;
+
+    switch (formdata.element) {
+      case "input":
         formTemplate = (
-            <div>
-                <input 
-                {...formdata.email.config}
-                value={formdata.email.value}
-                />
-            </div>
-        )
+          <div>
+            <input 
+            {...formdata.config}
+             value={formdata.value} 
+             onChange={(event)=> change({event,id})}
+             />
+             {showError()}
+          </div>
+        );
         break;
-        default:
-            formTemplate = null;
+      default:
+        formTemplate = null;
     }
 
     return formTemplate;
-}
+  };
 
-
-
-
-    return (
-        <div>
-            {renderTemplate()}
-        </div>
-    )
-}
+  return <div>{renderTemplate()}</div>;
+};
 
 export default FormData;

@@ -1,30 +1,71 @@
-import React, {Component} from 'react';
-import Fade from 'react-reveal/Fade';
-import FormData from '../../utiles/FormData';
+import React, { Component } from "react";
+import Fade from "react-reveal/Fade";
+import FormData from "../../utiles/FormData";
+import { validation } from "../../common/inputValidation";
 
 class Enroll extends Component {
   state = {
     formError: false,
-    formSucces: '',
+    formSucces: "",
     formdata: {
       email: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'email_input',
-          type: 'email',
-          placeholder: 'Enter you email',
+          name: "email_input",
+          type: "email",
+          placeholder: "Enter you email",
         },
         validation: {
           required: true,
           email: true,
         },
         valid: false,
-        validationMessage: '',
+        validationMessage: "",
       },
     },
   };
-  submitForm = () => {};
+
+  updateForm = (element) => {
+    const newFormdata = { ...this.state.formdata };
+    const newElement = { ...newFormdata[element.id] };
+
+    newElement.value = element.event.target.value;
+
+    let validData = validation(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
+
+    newFormdata[element.id] = newElement;
+
+    this.setState({
+      formError:false,
+      formdata: newFormdata,
+    });
+
+  };
+  submitForm = (event) => {
+    event.preventDefault();
+
+    let dataToSubmit ={};
+    let formIsValid = true;
+
+    for( let key in this.state.formdata){
+        dataToSubmit[key]= this.state.formdata[key].value;
+        formIsValid =this.state.formdata[key].valid && formIsValid;
+    }
+
+    if(formIsValid){
+      console.log(dataToSubmit);
+    }else{
+      this.setState({
+        formError:true
+      })
+    }
+
+    console.log(dataToSubmit);
+    
+  };
 
   render() {
     return (
@@ -33,7 +74,13 @@ class Enroll extends Component {
           <form onSubmit={(event) => this.submitForm(event)}>
             <div className="enroll_title">Enter your email</div>
             <div className="enroll_input">
-                <FormData id={'email'} formdata={this.state.formdata}/>
+              <FormData
+                id={"email"}
+                formdata={this.state.formdata.email}
+                change={(element) => this.updateForm(element)}
+              />
+              {this.state.formError?<div className="error_label">Somethisg is wrong, try again</div>:null}
+              <button onClick={(event)=>this.submitForm(event)}>Enroll</button>
             </div>
           </form>
         </div>
