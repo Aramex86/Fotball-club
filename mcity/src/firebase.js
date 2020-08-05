@@ -20,8 +20,10 @@
 
 const dataBase = firebase.database();
 const dataBaseMatches = dataBase.ref('matches');
+const dataPromotion = dataBase.ref('promotions');
 
 export {
   firebase,
   dataBaseMatches,
+  dataPromotion
 }
