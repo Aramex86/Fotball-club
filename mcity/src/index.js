@@ -4,12 +4,24 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import './componets/Resources/css/app.css';
+import {firebase} from './firebase';
 
 
-ReactDOM.render(
+const Index =(props)=>{
+  return(
     <BrowserRouter>
-      <App />
-    </BrowserRouter>,
+      <App {...props}/>
+    </BrowserRouter>
+  )
+}
+
+firebase.auth().onAuthStateChanged((user)=>{
+
+  
+  ReactDOM.render(
+    <Index user={user}/>,
   document.getElementById("root")
 );
+})
+
 
