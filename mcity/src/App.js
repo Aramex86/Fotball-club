@@ -3,7 +3,10 @@ import Layout from "./HOC/Layout";
 import Home from "./componets/Home/Home";
 import SingIn from "./componets/SingIn/SingIn";
 import Dashboard from "./componets/Admin/Dashboard";
+import AdminMatches from './componets/Admin/Matches/Admin_matches';
+
 import { Switch } from "react-router-dom";
+
 import PrivateRoute from "./componets/AuthRoutes/PrivateRouts";
 import PublicRoutes from './componets/AuthRoutes/PublicRoutes';
 
@@ -16,6 +19,12 @@ const App = (props) => {
           path="/dashboard"
           exact
           component={Dashboard}
+        />
+        <PrivateRoute
+          {...props}
+          path="/admin_matches"
+          exact
+          component={AdminMatches}
         />
 
         {/* <Route exact component={Dashboard} path='/dashboard'/> */}
