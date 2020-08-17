@@ -7,6 +7,8 @@ import SingIn from "./componets/SingIn/SingIn";
 import Dashboard from "./componets/Admin/Dashboard";
 import AdminMatches from './componets/Admin/Matches/Admin_matches';
 import AddEditMatch from './componets/Admin/Matches/AddEditMatch';
+import AdminPlayers from './componets/Admin/Players/AdminPlayers';
+import AddEditPlayers from './componets/Admin/Players/AddEditPlayers';
 
 
 
@@ -17,6 +19,18 @@ const App = (props) => {
   return (
     <Layout>
       <Switch>
+      <PrivateRoute
+          {...props}
+          path="/admin_players/edit_player"
+          exact
+          component={AddEditPlayers}
+        />
+      <PrivateRoute
+          {...props}
+          path="/admin_players/edit_player/:id"
+          exact
+          component={AddEditPlayers}
+        />
         <PrivateRoute
           {...props}
           path="/dashboard"
@@ -29,6 +43,7 @@ const App = (props) => {
           exact
           component={AdminMatches}
         />
+        
         <PrivateRoute
           {...props}
           path="/admin_matches/edit_match"
