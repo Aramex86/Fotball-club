@@ -30,7 +30,6 @@ class AdminMatches extends Component {
 	}
 
 	render() {
-		console.log(this.state.matches);
 		return (
 			<AdminLayout>
 				<div>
@@ -58,10 +57,11 @@ class AdminMatches extends Component {
 													{match.resultAway} <strong>-</strong> {match.resultLocal}
 												</TableCell>
 												<TableCell>
-                                                    {
-                                                        match.final ==="Yes"?<span className="matches_tag_red">Final</span>:<span className="matches_tag_green">Not played yet</span>
-                                                    }
-
+													{match.final === 'Yes' ? (
+														<span className="matches_tag_red">Final</span>
+													) : (
+														<span className="matches_tag_green">Not played yet</span>
+													)}
 												</TableCell>
 											</TableRow>
 									  ))

@@ -22,9 +22,12 @@
 const dataBase = firebase.database();
 const dataBaseMatches = dataBase.ref('matches');
 const dataPromotion = dataBase.ref('promotions');
+const dataTeams = dataBase.ref('teams');
 
 export {
   firebase,
   dataBaseMatches,
-  dataPromotion
+  dataPromotion,
+  dataTeams,
+  dataBase
 }
