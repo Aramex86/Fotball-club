@@ -5,6 +5,7 @@ import FormField from '../../utiles/FormData';
 import { validation } from '../../common/inputValidation';
 import { dataPlayers, dataBase, dataBaseMatches } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../common/ConvertFunction';
+import Fileuploader from '../../common/Fileuploader';
 
 class AddEditPlayers extends Component {
 	state = {
@@ -80,6 +81,12 @@ class AddEditPlayers extends Component {
 				validationMessage: '',
 				showLabel: false,
 			},
+			image: {
+				element: 'image',
+				value: '',
+				validation: { required: true },
+				valid: true,
+			},
 		},
 	};
 
@@ -100,9 +107,6 @@ class AddEditPlayers extends Component {
 			formdata: newFormdata,
 		});
 	};
-	
-
-	
 
 	submitForm = (event) => {
 		event.preventDefault();
@@ -115,22 +119,8 @@ class AddEditPlayers extends Component {
 			formIsValid = this.state.formdata[key].valid && formIsValid;
 		}
 
-		
 		if (formIsValid) {
-			if (this.state.formType === 'Edit Match') {
-				
-			} else {
-				dataBaseMatches
-					.push(dataToSubmit)
-					.then(() => {
-						this.props.history.push('/admin_matches');
-					})
-					.catch((e) => {
-						this.setState({
-							formError: true,
-						});
-					});
-			}
+			
 		} else {
 			this.setState({
 				formError: true,
@@ -140,14 +130,17 @@ class AddEditPlayers extends Component {
 
 	componentDidMount() {
 		const playerId = this.props.match.params.id;
-		if(!playerId){
+		if (!playerId) {
 			this.setState({
-				formType:'Add Player'
-			})
-		}else{
-
+				formType: 'Add Player',
+			});
+		} else {
 		}
 	}
+	resetImage =()=>{
+			
+	}
+	storefileName=()=>{}
 	render() {
 		return (
 			<AdminLayout>
@@ -155,6 +148,18 @@ class AddEditPlayers extends Component {
 					<h2>{this.state.formType}</h2>
 					<div>
 						<form onSubmit={(event) => this.submitForm(event)}>
+
+
+							<Fileuploader
+								dir="players"
+								tag={"Player image"}
+								defaultImg={this.state.defaultImg}
+								defaultImgName={this.state.formdata.value}
+								resetImage={()=>this.resetImage()}
+								fileName={(fileName)=>this.storefileName(fileName)}
+							>
+								</Fileuploader>	
+
 							<FormField
 								id={'name'}
 								formdata={this.state.formdata.name}
