@@ -19,21 +19,22 @@ class Fileuploader extends Component {
 		});
 	};
 
-	handleUploadSuccess = (fileanme) => {
+	handleUploadSuccess = (filename) => {
 		this.setState({
-			name: fileanme,
+			name: filename,
 			isUploading: false,
 		});
 
 		firebase
 			.storage()
 			.ref(this.props.dir)
-			.child(fileanme)
+			.child(filename)
 			.getDownloadURL()
 			.then((url) => {
-				console.log(url);
 				this.setState({ fileUrl: url });
 			});
+
+		this.props.fileName(filename);
 	};
 
 	static getDerivedStateFromProps(props, state) {
@@ -45,6 +46,14 @@ class Fileuploader extends Component {
 		}
 		return null;
 	}
+	uploadAgain = () => {
+		this.setState({
+			name: '',
+			isUploading: false,
+			fileUrl: '',
+        });
+        this.props.resetImage();
+	};
 
 	render() {
 		return (
@@ -70,14 +79,14 @@ class Fileuploader extends Component {
 				) : (
 					''
 				)}
-                {
-                    this.state.fileUrl? <div className="image_upload_container">
-                        <img style={{width:'100%'}}src={this.state.fileUrl} alt="img"/>
-                        <div className="remove" onClick={()=>this.uploadAgain()}>
-                            Remove
-                        </div>
-                    </div>:null
-                }
+				{this.state.fileUrl ? (
+					<div className="image_upload_container">
+						<img style={{ width: '100%' }} src={this.state.fileUrl} alt="img" />
+						<div className="remove" onClick={() => this.uploadAgain()}>
+							Remove
+						</div>
+					</div>
+				) : null}
 			</div>
 		);
 	}

@@ -85,16 +85,20 @@ class AddEditPlayers extends Component {
 				element: 'image',
 				value: '',
 				validation: { required: true },
-				valid: true,
+				valid: false,
 			},
 		},
 	};
 
-	updateForm = (element) => {
+	updateForm = (element, content = '') => {
 		const newFormdata = { ...this.state.formdata };
 		const newElement = { ...newFormdata[element.id] };
 
-		newElement.value = element.event.target.value;
+		if (content === '') {
+			newElement.value = element.event.target.value;
+		} else {
+			newElement.value = content;
+		}
 
 		let validData = validation(newElement);
 		newElement.valid = validData[0];
@@ -120,7 +124,17 @@ class AddEditPlayers extends Component {
 		}
 
 		if (formIsValid) {
-			
+			if(this.state.formType == 'Edit Player'){
+				///
+			}else{
+				dataPlayers.push(dataToSubmit).then(()=>{
+					this.props.history.push('/admin_players')
+				}).catch(e=>{
+					this.setState({
+						formError:true
+					})
+				})
+			}
 		} else {
 			this.setState({
 				formError: true,
@@ -137,10 +151,19 @@ class AddEditPlayers extends Component {
 		} else {
 		}
 	}
-	resetImage =()=>{
-			
-	}
-	storefileName=()=>{}
+	resetImage = () => {
+		const newFormdata = { ...this.state.formdata };
+		newFormdata['image'].value = '';
+		newFormdata['image'].valid = false;
+		this.setState({
+			defaultImg: '',
+			formdata: newFormdata,
+		});
+	};
+	storefileName = (filename) => {
+		this.updateForm({ id: 'image' }, filename);
+	};
+
 	render() {
 		return (
 			<AdminLayout>
@@ -148,17 +171,14 @@ class AddEditPlayers extends Component {
 					<h2>{this.state.formType}</h2>
 					<div>
 						<form onSubmit={(event) => this.submitForm(event)}>
-
-
 							<Fileuploader
 								dir="players"
-								tag={"Player image"}
+								tag={'Player image'}
 								defaultImg={this.state.defaultImg}
 								defaultImgName={this.state.formdata.value}
-								resetImage={()=>this.resetImage()}
-								fileName={(fileName)=>this.storefileName(fileName)}
-							>
-								</Fileuploader>	
+								resetImage={() => this.resetImage()}
+								fileName={(filename) => this.storefileName(filename)}
+							></Fileuploader>
 
 							<FormField
 								id={'name'}
