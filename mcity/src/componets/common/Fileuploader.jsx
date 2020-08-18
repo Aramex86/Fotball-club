@@ -51,8 +51,8 @@ class Fileuploader extends Component {
 			name: '',
 			isUploading: false,
 			fileUrl: '',
-        });
-        this.props.resetImage();
+		});
+		this.props.resetImage();
 	};
 
 	render() {

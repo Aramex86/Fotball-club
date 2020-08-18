@@ -3,7 +3,7 @@ import AdminLayout from '../../../HOC/AdminLayout';
 
 import FormField from '../../utiles/FormData';
 import { validation } from '../../common/inputValidation';
-import { dataPlayers, dataBase, dataBaseMatches } from '../../../firebase';
+import { dataPlayers, dataBase, dataBaseMatches, firebase } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../common/ConvertFunction';
 import Fileuploader from '../../common/Fileuploader';
 
@@ -124,16 +124,27 @@ class AddEditPlayers extends Component {
 		}
 
 		if (formIsValid) {
-			if(this.state.formType == 'Edit Player'){
-				///
-			}else{
-				dataPlayers.push(dataToSubmit).then(()=>{
-					this.props.history.push('/admin_players')
-				}).catch(e=>{
-					this.setState({
-						formError:true
+			if (this.state.formType === 'Edit Player') {
+				dataBase
+					.ref(`players/${this.state.playerId}`)
+					.update(dataToSubmit)
+					.then(() => {
+						this.successForm();
 					})
-				})
+					.catch((e) => {
+						this.setState({ formError: true });
+					});
+			} else {
+				dataPlayers
+					.push(dataToSubmit)
+					.then(() => {
+						this.props.history.push('/admin_players');
+					})
+					.catch((e) => {
+						this.setState({
+							formError: true,
+						});
+					});
 			}
 		} else {
 			this.setState({
@@ -142,6 +153,31 @@ class AddEditPlayers extends Component {
 		}
 	};
 
+	updateFields = (player, playerId, formType, defaultImg) => {
+		const newFormdata = { ...this.state.formdata };
+
+		for (let key in newFormdata) {
+			newFormdata[key].value = player[key];
+			newFormdata[key].valid = true;
+		}
+		this.setState({
+			playerId,
+			defaultImg,
+			formType,
+			formdata: newFormdata,
+		});
+	};
+
+	successForm = (message) => {
+		this.setState({
+			formSucces: message,
+		});
+		setTimeout(() => {
+			this.setState({
+				formSucces: '',
+			});
+		}, 2000);
+	};
 	componentDidMount() {
 		const playerId = this.props.match.params.id;
 		if (!playerId) {
@@ -149,6 +185,24 @@ class AddEditPlayers extends Component {
 				formType: 'Add Player',
 			});
 		} else {
+			dataBase
+				.ref(`players/${playerId}`)
+				.once('value')
+				.then((snapshop) => {
+					const playerdData = snapshop.val();
+
+					firebase
+						.storage()
+						.ref('players')
+						.child(playerdData.image)
+						.getDownloadURL()
+						.then((url) => {
+							this.updateFields(playerdData, playerId, 'Edit player', url);
+						})
+						.catch((e) => {
+							this.updateFields({ ...playerdData, image: '' }, playerId, 'Edit player', '');
+						});
+				});
 		}
 	}
 	resetImage = () => {
