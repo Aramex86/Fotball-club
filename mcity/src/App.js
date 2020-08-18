@@ -10,6 +10,7 @@ import AddEditMatch from './componets/Admin/Matches/AddEditMatch';
 import AdminPlayers from './componets/Admin/Players/AdminPlayers';
 import AddEditPlayers from './componets/Admin/Players/AddEditPlayers';
 import TheTeam from './componets/The-team/TheTeam';
+import TheMatches from './componets/The_Matches/TheMatches';
 
 import PrivateRoute from './componets/AuthRoutes/PrivateRouts';
 import PublicRoutes from './componets/AuthRoutes/PublicRoutes';
@@ -32,6 +33,7 @@ const App = (props) => {
 				<PublicRoutes {...props} restricted={true} path="/sign-in" exact component={SingIn} />
 				<PublicRoutes {...props} restricted={false} path="/" exact component={Home} />
 				<PublicRoutes {...props} restricted={false} path="/the_team" exact component={TheTeam} />
+				<PublicRoutes {...props} restricted={false} path="/the_matches" exact component={TheMatches} />
 				{/* <Route exact component={Home} path="/" /> */}
 			</Switch>
 		</Layout>

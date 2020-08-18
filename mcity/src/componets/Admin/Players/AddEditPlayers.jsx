@@ -3,8 +3,8 @@ import AdminLayout from '../../../HOC/AdminLayout';
 
 import FormField from '../../utiles/FormData';
 import { validation } from '../../common/inputValidation';
-import { dataPlayers, dataBase, dataBaseMatches, firebase } from '../../../firebase';
-import { firebaseLooper, reverseArray } from '../../common/ConvertFunction';
+import { dataPlayers, dataBase,  firebase } from '../../../firebase';
+//import { firebaseLooper, reverseArray } from '../../common/ConvertFunction';
 import Fileuploader from '../../common/Fileuploader';
 
 class AddEditPlayers extends Component {

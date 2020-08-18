@@ -1,9 +1,9 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PlayerCard from '../common/PlayerCard';
 import Fade from 'react-reveal/Fade';
 
 import Stripes from '../../images/stripes.png';
-import { dataPlayers, firebase, dataBase } from '../../firebase';
+import { dataPlayers, firebase } from '../../firebase';
 import { firebaseLooper } from '../common/ConvertFunction';
 import { Promise } from 'core-js';
 

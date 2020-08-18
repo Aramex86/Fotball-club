@@ -36,7 +36,6 @@ import Slide from 'react-reveal/Slide';
 
     render() {
 
-        console.log(this.state);
         return (
             <div className='home_matches'>
                 {this.showMatches(this.state.matches)}

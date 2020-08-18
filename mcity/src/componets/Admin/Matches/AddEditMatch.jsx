@@ -4,7 +4,7 @@ import AdminLayout from '../../../HOC/AdminLayout';
 import FormField from '../../utiles/FormData';
 import { validation } from '../../common/inputValidation';
 import { dataTeams, dataBase, dataBaseMatches } from '../../../firebase';
-import { firebaseLooper, reverseArray } from '../../common/ConvertFunction';
+import { firebaseLooper } from '../../common/ConvertFunction';
 
 class AddEditMatch extends Component {
 	state = {
