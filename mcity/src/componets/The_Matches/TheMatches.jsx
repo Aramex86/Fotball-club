@@ -26,12 +26,45 @@ const TheMatches = (props) => {
 		});
 	};
 
+	const showPlayed=(played)=>{
+		const list = matches.filter((match)=>{
+			return match.final === played
+		});
+
+		setFilterMatches(played==='All'?matches:list,);
+		setPlayerFilter(played);
+		setResultFilter('All');
+
+
+	}
+
 	return (
 		<div className="the_matches_container">
 			<div className="the_matches_wrapper">
 				<div className="left">
 					<div className="match_filters">
-                        
+                        <div className="match_filters_box">
+							<div className="tag">
+								Show Match
+							</div>
+							<div className="cont">
+								<div className={`option`} onClick={()=>
+									showPlayed('All')
+								}>
+									All
+								</div>
+								<div className={`option`} onClick={()=>
+									showPlayed('Yes')
+								}>
+									Played
+								</div>
+								<div className={`option`} onClick={()=>
+									showPlayed('No')
+								}>
+									Not Played
+								</div>
+							</div>
+						</div>
                     </div>
                     <MatchesList matches={filterMatches}/>
 				</div>
