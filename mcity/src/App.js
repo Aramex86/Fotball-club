@@ -42,6 +42,6 @@ const App = (props) => {
 				{/* <Route exact component={Home} path="/" /> */}
 			</Switch>
 		</Layout>
-	);
+	); 
 };
 export default App;
