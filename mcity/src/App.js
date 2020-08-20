@@ -32,7 +32,7 @@ const App = (props) => {
 
 				{/* <Route exact component={Dashboard} path='/dashboard'/> */}
 				{/* <Route exact component={SingIn} path="/sign-in" /> */}
-				<PublicRoutes {...props} restricted={true} path="/sign-in" exact component={SingIn} />
+				<PublicRoutes {...props} restricted={true} path="/sign_in" exact component={SingIn} />
 				<PublicRoutes {...props} restricted={false} path="/the_team" exact component={TheTeam} />
 				<PublicRoutes {...props} restricted={false} path="/the_matches" exact component={TheMatches} />
 

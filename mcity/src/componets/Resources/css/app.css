@@ -1,3 +1,6 @@
+
+
+
 body {
     margin:0;
     padding:0;
@@ -168,10 +171,27 @@ footer .footer_discl {
     height: 800px;
     overflow: hidden;
 }
+@media screen and (max-width: 1024px) {
+    .featured_wrapper {
+      width: 100%;
+    }
+  }
 
 .featured_stripes {
     position: relative
 }
+@media screen and (max-width: 1024px) {
+    .featured_stripes .stripe:nth-child(1){
+        transform: rotate(25deg) translate(33px, -260px) !important;
+    }
+    .featured_stripes .stripe:nth-child(2){
+        transform: rotate(25deg) translate(282px, -260px) !important;
+    }
+    .featured_stripes .stripe:nth-child(3){
+        transform: rotate(25deg) translate(530px, -330px) !important;
+    }
+  }
+
 .featured_text {
     position: relative;
     font-family: 'Righteous', cursive;
@@ -190,6 +210,12 @@ footer .footer_discl {
     transform: translate(260px,170px);
     position: absolute;
 }
+@media screen and (max-width: 1024px) {
+    .featured_number{
+        transform: translate(183px, 170px) rotateY(360deg) !important;
+        font-size: 245px;
+    }
+  }
 
 .featured_player {
     width: 500px;
@@ -198,6 +224,12 @@ footer .footer_discl {
     background-repeat: no-repeat !important;
     position: absolute;
 }
+@media screen and (max-width: 1024px) {
+    .featured_player{
+        transform: translate(440px, 201px) !important;
+        font-size: 83px;
+    }
+  }
 .featured_first {
     position: absolute;
     background: #0e1731;
@@ -206,6 +238,12 @@ footer .footer_discl {
     text-transform: uppercase;
     padding: 0px 20px;
 }
+@media screen and (max-width: 1024px) {
+    .featured_first{
+        transform: translate(140px, 450px) !important;
+        font-size: 83px;
+    }
+  }
 
 .featured_second {
     position: absolute;
@@ -215,6 +253,12 @@ footer .footer_discl {
     text-transform: uppercase;
     padding: 0px 20px;
 }
+@media screen and (max-width: 1024px) {
+    .featured_second{
+        transform: translate(140px, 586px) !important;
+        font-size: 83px;
+    }
+  }
 
 /*=============================
             MATCHES HOME
@@ -531,6 +575,7 @@ footer .footer_discl {
 
 .the_matches_wrapper .right {
    width:400px;
+   background: rgb(152, 198, 233);
 }
 
 .league_table_wrapper {
