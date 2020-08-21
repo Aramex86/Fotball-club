@@ -38,26 +38,26 @@ class AdminMatches extends Component {
 						<Table>
 							<TableHead>
 								<TableRow>
-									<TableCell>Date</TableCell>
-									<TableCell>Match</TableCell>
-									<TableCell>Result</TableCell>
-									<TableCell>Final</TableCell>
+									<TableCell className="table_cell">Date</TableCell>
+									<TableCell className="table_cell">Match</TableCell>
+									<TableCell className="table_cell">Result</TableCell>
+									<TableCell className="table_cell">Final</TableCell>
 								</TableRow>
 							</TableHead>
 							<TableBody>
 								{this.state.matches
 									? this.state.matches.map((match, i) => (
 											<TableRow key={i}>
-												<TableCell>{match.date}</TableCell>
-												<TableCell>
+												<TableCell className="table_cell">{match.date}</TableCell>
+												<TableCell className="table_cell">
 													<Link to={`/admin_matches/edit_match/${match.id}`}>
 														{match.away} <strong>-</strong> {match.local}
 													</Link>
 												</TableCell>
-												<TableCell>
+												<TableCell className="table_cell">
 													{match.resultAway} <strong>-</strong> {match.resultLocal}
 												</TableCell>
-												<TableCell>
+												<TableCell className="table_cell">
 													{match.final === 'Yes' ? (
 														<span className="matches_tag_red">Final</span>
 													) : (

@@ -37,28 +37,28 @@ class AdminPlayers extends Component {
 						<Table>
 							<TableHead>
 								<TableRow>
-									<TableCell>First name</TableCell>
-									<TableCell>Last name</TableCell>
-									<TableCell>Number</TableCell>
-									<TableCell>Position</TableCell>
+									<TableCell className="table_cell">First name</TableCell>
+									<TableCell className="table_cell">Last name</TableCell>
+									<TableCell className="table_cell">Number</TableCell>
+									<TableCell className="table_cell">Position</TableCell>
 								</TableRow>
 							</TableHead>
 							<TableBody>
 								{this.state.players
 									? this.state.players.map((player, i) => (
 											<TableRow key={i}>
-												<TableCell>
+												<TableCell className="table_cell">
 													<Link to={`/admin_players/add_players/${player.id}`}>
 														{player.name}
 													</Link>
 												</TableCell>
-												<TableCell>
+												<TableCell className="table_cell">
 													<Link to={`/admin_players/add_players/${player.id}`}>
 														{player.lastname}
 													</Link>
 												</TableCell>
-												<TableCell>{player.number}</TableCell>
-												<TableCell>{player.position}</TableCell>
+												<TableCell className="table_cell">{player.number}</TableCell>
+												<TableCell className="table_cell">{player.position}</TableCell>
 											</TableRow>
 									  ))
 									: null}

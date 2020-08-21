@@ -183,6 +183,12 @@ footer .footer_discl {
 		width: 100% !important;
 	}
 }
+@media screen and (max-width: 425px) {
+	.featured_wrapper {
+		width: 100% !important;
+		height: 390px;
+	}
+}
 
 .featured_stripes {
 	position: relative;
@@ -211,6 +217,22 @@ footer .footer_discl {
 	}
 	.featured_stripes .stripe {
 		width: 200px !important;
+	}
+}
+@media screen and (max-width: 425px) {
+	.featured_stripes .stripe:nth-child(1) {
+		transform: rotate(25deg) translate(-11px, -83px) !important;
+	}
+	.featured_stripes .stripe:nth-child(2) {
+		transform: rotate(25deg) translate(120px, -107px) !important;
+	}
+
+	.featured_stripes .stripe:nth-child(3) {
+		transform: rotate(25deg) translate(251px, -131px) !important;
+	}
+	.featured_stripes .stripe {
+		width: 121px !important;
+		height: 500px !important;
 	}
 }
 
@@ -243,6 +265,18 @@ footer .footer_discl {
 		font-size: 245px;
 	}
 }
+@media screen and (max-width: 425px) {
+	.featured_number {
+		transform: translate(61px, -6px) rotateY(360deg) !important;
+		font-size: 159px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.featured_number {
+		transform: translate(49px, 39px) rotateY(360deg) !important;
+		font-size: 124px;
+	}
+}
 
 .featured_player {
 	width: 500px;
@@ -263,6 +297,18 @@ footer .footer_discl {
 		width: 368px;
 	}
 }
+@media screen and (max-width: 425px) {
+	.featured_player {
+		transform: translate(193px, 42px) !important;
+		width: 232px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.featured_player {
+		transform: translate(155px, 42px) !important;
+		width: 220px;
+	}
+}
 .featured_first {
 	position: absolute;
 	background: #0e1731;
@@ -281,6 +327,18 @@ footer .footer_discl {
 	.featured_first {
 		transform: translate(120px, 450px) !important;
 		font-size: 67px;
+	}
+}
+@media screen and (max-width: 425px) {
+	.featured_first {
+		transform: translate(67px, 161px) !important;
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.featured_first {
+		transform: translate(54px, 172px) !important;
+		font-size: 33px;
 	}
 }
 
@@ -304,6 +362,18 @@ footer .footer_discl {
 		font-size: 67px;
 	}
 }
+@media screen and (max-width: 425px) {
+	.featured_second {
+		transform: translate(66px, 229px) !important;
+		font-size: 41px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.featured_second {
+		transform: translate(54px, 231px) !important;
+		font-size: 33px;
+	}
+}
 
 /*=============================
             MATCHES HOME
@@ -324,6 +394,11 @@ footer .footer_discl {
 .home_matches_wrapper .home_matches .item {
 	width: 50%;
 	margin: 35px 0px;
+}
+@media screen and (max-width: 425px) {
+	.home_matches_wrapper .home_matches .item {
+		width: 100%;
+	}
 }
 
 .home_matches_wrapper .home_matches .item .wrapper {
@@ -372,11 +447,11 @@ footer .footer_discl {
 	font-size: 30px;
 	padding: 6px 10px;
 }
-@media screen and (max-width:770px){
-    .match_block .match_wrapper .match_top .left .team_name,
-.match_block .match_wrapper .match_bottom .left .team_name{
-    font-size: 25px !important;
-}
+@media screen and (max-width: 770px) {
+	.match_block .match_wrapper .match_top .left .team_name,
+	.match_block .match_wrapper .match_bottom .left .team_name {
+		font-size: 25px !important;
+	}
 }
 
 .match_block .match_wrapper .match_top .right,
@@ -397,14 +472,14 @@ footer .footer_discl {
 	height: 143px;
 	clear: both;
 }
-@media screen and (max-width:770px){
-    .match_box_big{
-    padding: 20px 5%;
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
-    }
+@media screen and (max-width: 770px) {
+	.match_box_big {
+		padding: 20px 5%;
+		display: flex;
+		height: auto;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 .match_box_big .block_wraper {
@@ -422,11 +497,11 @@ footer .footer_discl {
 	height: 50px;
 	background-size: cover !important;
 }
-@media screen and (max-width:770px){
-    .match_box_big .icon {
-        width: 40px;
-        height: 40px;
-    }
+@media screen and (max-width: 770px) {
+	.match_box_big .icon {
+		width: 40px;
+		height: 40px;
+	}
 }
 .match_box_big .block .team,
 .match_box_big .block .result {
@@ -447,15 +522,15 @@ footer .footer_discl {
 	font-weight: 300;
 	color: #5e5e5e;
 }
-@media screen and (max-width:770px){
-    .block_wraper.nfo {
+@media screen and (max-width: 770px) {
+	.block_wraper.nfo {
 		border-left: none;
-        border-top: 1px solid #98c6e9;
-        padding-left: 10px;
-        font-weight: 300;
+		border-top: 1px solid #98c6e9;
+		padding-left: 10px;
+		font-weight: 300;
 		color: #5e5e5e;
 		height: auto;
-    }
+	}
 }
 
 .block_wraper.nfo div {
@@ -467,6 +542,7 @@ footer .footer_discl {
 	border-bottom: 1px solid #01285e;
 	background: #dff1ff;
 }
+
 .match_filters .tag {
 	font-weight: 300;
 	margin-bottom: 5px;
@@ -480,8 +556,8 @@ footer .footer_discl {
 	margin-right: 5px;
 	cursor: pointer;
 }
-@media screen and (max-width:770px){
-	.match_filters .option{
+@media screen and (max-width: 770px) {
+	.match_filters .option {
 		padding: 7px 8px;
 		border-radius: 3px;
 		font-size: 11px;
@@ -500,9 +576,20 @@ footer .footer_discl {
 	border-right: 1px solid #01285e;
 	background: #dff1ff;
 }
+@media screen and (max-width: 425px) {
+	.match_filters_box {
+		width: 50%;
+		text-align: center;
+	}
+}
 
 .match_filters .cont {
 	display: flex;
+}
+@media screen and (max-width: 425px) {
+	.match_filters .cont {
+		justify-content: space-evenly;
+	}
 }
 
 /*=============================
@@ -517,13 +604,18 @@ footer .footer_discl {
 	padding-bottom: 100px;
 	min-height: 600px;
 }
-@media screen and (max-width:770px){
-    .home_meetplayers_wrapper{
-        padding: 0 20px;
-        padding-bottom: 35px;
-        display: flex;
-        justify-content: space-between;
-    }
+@media screen and (max-width: 770px) {
+	.home_meetplayers_wrapper {
+		padding: 0 20px;
+		padding-bottom: 35px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+@media screen and (max-width: 770px) {
+	.home_meetplayers_wrapper {
+		flex-direction: column;
+	}
 }
 
 .home_meetplayers .home_card_wrapper {
@@ -532,47 +624,84 @@ footer .footer_discl {
 	width: 630px;
 	min-height: 600px;
 }
-@media screen and (max-width:770px){
-    .home_meetplayers .home_card_wrapper div div:nth-child(1){
-    left: 90px !important;
-    bottom: 91px !important;
-    }
-    .home_meetplayers .home_card_wrapper div div:nth-child(2){
-    left: 63px !important;
-    bottom: 62px !important;
-    }
-    .home_meetplayers .home_card_wrapper div div:nth-child(3){
-        left: 34px !important;
-        bottom: 32px !important;
-    }
-    
-    .home_meetplayers .home_card_wrapper div div:nth-child(4){
-        left: 0px !important;
-        bottom: 0px !important;
-    }
+@media screen and (max-width: 425px) {
+	.home_meetplayers .home_card_wrapper {
+		width: 0;
+	}
+}
+@media screen and (max-width: 770px) {
+	.home_meetplayers .home_card_wrapper div div:nth-child(1) {
+		left: 90px !important;
+		bottom: 91px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div:nth-child(2) {
+		left: 63px !important;
+		bottom: 62px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div:nth-child(3) {
+		left: 34px !important;
+		bottom: 32px !important;
+	}
 
-    .home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo{
-        left: 2px !important;
-        bottom: 2px !important;
-    }
-    .home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo .player_card_name{
-        left:0 !important;
-        bottom: 0px !important;
-    }
-    
+	.home_meetplayers .home_card_wrapper div div:nth-child(4) {
+		left: 0px !important;
+		bottom: 0px !important;
+	}
+
+	.home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo {
+		left: 2px !important;
+		bottom: 2px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo .player_card_name {
+		left: 0 !important;
+		bottom: 0px !important;
+	}
+}
+@media screen and (max-width: 425px) {
+	.home_meetplayers .home_card_wrapper div div:nth-child(1) {
+		left: 79px !important;
+		bottom: 81px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div:nth-child(2) {
+		left: 63px !important;
+		bottom: 62px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div:nth-child(3) {
+		left: 34px !important;
+		bottom: 32px !important;
+	}
+
+	.home_meetplayers .home_card_wrapper div div:nth-child(4) {
+		left: 0px !important;
+		bottom: 0px !important;
+	}
+
+	.home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo {
+		left: 2px !important;
+		bottom: 2px !important;
+	}
+	.home_meetplayers .home_card_wrapper div div .player_card_wrapper .player_card_nfo .player_card_name {
+		left: 0 !important;
+		bottom: 0px !important;
+	}
 }
 
 .home_meetplayers .home_text_wrapper {
 	float: right;
 	width: 390px;
 }
-@media screen and (max-width:770px){
-    .home_meetplayers .home_text_wrapper div div{
-        font-size: 80px !important;
-    }
-    .home_meetplayers .home_text_wrapper div:nth-child(4) div{
-        font-size: 27px !important;
-    }
+@media screen and (max-width: 770px) {
+	.home_meetplayers .home_text_wrapper div div {
+		font-size: 80px !important;
+	}
+	.home_meetplayers .home_text_wrapper div:nth-child(4) div {
+		font-size: 27px !important;
+	}
+}
+@media screen and (max-width: 375px) {
+	.home_meetplayers .home_text_wrapper {
+		width: 100%;
+	}
 }
 
 /*=============================
@@ -585,6 +714,11 @@ footer .footer_discl {
 	width: 300px;
 	padding: 10px 10px 20px 10px;
 	font-family: 'Righteous';
+}
+@media screen and (max-width: 375px) {
+	.player_card_wrapper {
+		width: 230px;
+	}
 }
 .player_card_wrapper .player_card_thmb {
 	border: 1px solid #eeeeee;
@@ -628,15 +762,25 @@ footer .footer_discl {
 .promotion_wrapper {
 	padding: 30px 0px 130px 0px;
 }
-@media screen and (max-width:770px){
-    .promotion_wrapper {
-        padding: 0 15px;
-    }
+@media screen and (max-width: 770px) {
+	.promotion_wrapper {
+		padding: 0 15px;
+	}
 }
 
 .promotion_wrapper .promotion_animation {
 	display: flex;
 	padding: 80px 0px 30px 0px;
+	flex-direction: column;
+}
+@media screen and (max-width: 770px) {
+	.promotion_wrapper .promotion_animation {
+		display: flex;
+		padding: 80px 0px 30px 0px;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
 }
 
 .promotion_wrapper .promotion_animation .left {
@@ -648,14 +792,25 @@ footer .footer_discl {
 	color: #d5ebfd;
 	line-height: 135px;
 }
-@media screen and (max-width:770px){
-    .promotion_wrapper .promotion_animation .left{
-        font-size: 140px;
-    }
+@media screen and (max-width: 770px) {
+	.promotion_wrapper .promotion_animation .left {
+		font-size: 140px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.promotion_wrapper .promotion_animation .left {
+		font-size: 100px;
+		line-height: 120px;
+	}
 }
 .promotion_wrapper .promotion_animation .left span {
 	display: block;
 }
+/* @media screen and (max-width: 425px) {
+	.promotion_wrapper .promotion_animation .left span {
+		font-size: 110px;
+	}
+} */
 
 .promotion_wrapper .promotion_animation .right {
 	line-height: 135px;
@@ -666,10 +821,10 @@ footer .footer_discl {
 	height: 280px;
 	background-size: contain !important;
 }
-@media screen and (max-width:770px){
-    .promotion_wrapper .promotion_animation .right div{
-        width: 266px;
-    }
+@media screen and (max-width: 770px) {
+	.promotion_wrapper .promotion_animation .right div {
+		width: 266px;
+	}
 }
 
 .promotion_wrapper .enroll_wrapper {
@@ -707,6 +862,11 @@ footer .footer_discl {
 .the_matches_wrapper {
 	display: flex;
 }
+@media screen and (max-width: 425px) {
+	.the_matches_wrapper {
+		flex-direction: column;
+	}
+}
 
 .the_matches_wrapper .left {
 	flex-grow: 1;
@@ -715,6 +875,12 @@ footer .footer_discl {
 .the_matches_wrapper .right {
 	width: 400px;
 	background: rgb(152, 198, 233);
+}
+@media screen and (max-width: 425px) {
+	.the_matches_wrapper .right {
+		width: 98%;
+		margin: 5px auto;
+	}
 }
 
 .league_table_wrapper {
@@ -778,6 +944,15 @@ footer .footer_discl {
 	padding: 20px;
 	width: 480px;
 }
+@media screen and (max-width: 425px) {
+	.editmatch_dialog_wrapper,
+	.editplayers_dialog_wrapper {
+		width: 90%;
+	}
+	.table_cell {
+		padding: 8px !important;
+	}
+}
 
 .select_team_layout .wrapper {
 	display: flex;
@@ -838,6 +1013,15 @@ footer .footer_discl {
 	min-height: 70vh;
 	text-align: center;
 }
+@media screen and (max-width: 425px) {
+	.signin_wrapper {
+		margin: 0;
+		padding: 40px 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
 
 .signin_wrapper form {
 	width: 350px;
@@ -861,4 +1045,9 @@ footer .footer_discl {
 	color: #d5ebfe;
 	text-align: center;
 	margin-top: 200px;
+}
+@media screen and (max-width: 425px) {
+	.user_dashboard {
+		font-size: 50px;
+	}
 }
