@@ -565,6 +565,14 @@ footer .footer_discl {
 		cursor: pointer;
 	}
 }
+@media screen and (max-width: 375px) {
+	.match_filters .option {
+		padding: 7px 6px;
+		border-radius: 3px;
+		font-size: 10px;
+		cursor: pointer;
+	}
+}
 
 .match_filters .option.active {
 	background: #62a2d3;
@@ -953,6 +961,11 @@ footer .footer_discl {
 		padding: 8px !important;
 	}
 }
+@media screen and (max-width:375px){
+	.table_cell{
+		padding: 10px 2px!important;
+	}
+}
 
 .select_team_layout .wrapper {
 	display: flex;
@@ -1014,6 +1027,15 @@ footer .footer_discl {
 	text-align: center;
 }
 @media screen and (max-width: 425px) {
+	.signin_wrapper {
+		margin: 0;
+		padding: 40px 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width:375px) {
 	.signin_wrapper {
 		margin: 0;
 		padding: 40px 0;

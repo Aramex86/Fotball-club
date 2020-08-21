@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+//import CircularProgress from '@material-ui/core/CircularProgress';
 import Table from './Table';
 import MatchesList from './MatchesList';
 
@@ -7,7 +7,7 @@ import { dataBaseMatches } from '../../firebase';
 import { firebaseLooper, reverseArray } from '../common/ConvertFunction';
 
 const TheMatches = (props) => {
-	const [loading, setLoading] = useState(true);
+	//const [loading, setLoading] = useState(true);
 	const [matches, setMatches] = useState([]);
 	const [filterMatches, setFilterMatches] = useState([]);
 	const [playedFilter, setPlayerFilter] = useState('All');
@@ -20,7 +20,7 @@ const TheMatches = (props) => {
 		dataBaseMatches.once('value').then((snapshot) => {
 			const matches = firebaseLooper(snapshot);
 
-			setLoading(false);
+			//setLoading(true);
 			setMatches(reverseArray(matches));
 			setFilterMatches(reverseArray(matches));
 		});
