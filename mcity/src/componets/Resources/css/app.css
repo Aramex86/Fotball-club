@@ -173,7 +173,7 @@ footer .footer_discl {
 	height: 800px;
 	overflow: hidden;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px){
 	.featured_wrapper {
 		width: 100% !important;
 	}
@@ -193,7 +193,7 @@ footer .footer_discl {
 .featured_stripes {
 	position: relative;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px) {
 	.featured_stripes .stripe:nth-child(1) {
 		transform: rotate(25deg) translate(33px, -260px) !important;
 	}
@@ -201,7 +201,7 @@ footer .footer_discl {
 		transform: rotate(25deg) translate(282px, -260px) !important;
 	}
 	.featured_stripes .stripe:nth-child(3) {
-		transform: rotate(25deg) translate(530px, -330px) !important;
+		transform: rotate(25deg) translate(530px, -355px) !important;
 	}
 }
 @media screen and (max-width: 770px) {
@@ -253,7 +253,7 @@ footer .footer_discl {
 	transform: translate(260px, 170px);
 	position: absolute;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px) {
 	.featured_number {
 		transform: translate(183px, 170px) rotateY(360deg) !important;
 		font-size: 245px;
@@ -285,7 +285,7 @@ footer .footer_discl {
 	background-repeat: no-repeat !important;
 	position: absolute;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px) {
 	.featured_player {
 		transform: translate(440px, 201px) !important;
 		font-size: 83px;
@@ -317,7 +317,7 @@ footer .footer_discl {
 	text-transform: uppercase;
 	padding: 0px 20px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px) {
 	.featured_first {
 		transform: translate(140px, 450px) !important;
 		font-size: 83px;
@@ -350,7 +350,7 @@ footer .footer_discl {
 	text-transform: uppercase;
 	padding: 0px 20px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width:1090px) {
 	.featured_second {
 		transform: translate(140px, 586px) !important;
 		font-size: 83px;
