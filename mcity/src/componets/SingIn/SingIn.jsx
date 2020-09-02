@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormField from '../../componets/utiles/FormData';
 import { validation } from '../../componets/common/inputValidation';
 import { firebase } from '../../firebase';
+import AuthHint from './AuthHint';
 
 class SingIn extends Component {
 	state = {
@@ -107,6 +108,7 @@ class SingIn extends Component {
 						{this.state.formError ? <div className="error_label">Somethisg is wrong, try again</div> : null}
 						<button onClick={(event) => this.submitForm(event)}>Sign in</button>
 					</form>
+					<AuthHint/>
 				</div>
 			</div>
 		);

@@ -3,7 +3,8 @@ import { AppBar } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import Logo from '../common/Logo';
+import Logo from "../common/Logo";
+import HintLogIn from '../common/Hint-logIn';
 
 const Header = (props) => {
   return (
@@ -17,24 +18,20 @@ const Header = (props) => {
           borderBottom: "2px solid #00285e",
         }}
       >
-      <Toolbar style={{ dispaly: "flex" }}>
-         <div style={{flexGrow:1}}>
-            <div className="header_logo">
-               <Logo 
-                link={true}
-                linkTo='/'
-                width='70px'
-                height='70px'
-               />
+        <Toolbar style={{ dispaly: "flex" }}>
+          <div style={{ flexGrow: 1 }}>
+            <div className="header_logo" style={{ display: "flex" }}>
+              <Logo link={true} linkTo="/" width="70px" height="70px" />
+              <HintLogIn/>
             </div>
-         </div>
-         <Link to='/the_team'>
-            <Button color='inherit'>The Team</Button>
-         </Link>
-         <Link to='the_matches'>
-         <Button color='inherit'>Matches</Button>
-         </Link>
-      </Toolbar>
+          </div>
+          <Link to="/the_team">
+            <Button color="inherit">The Team</Button>
+          </Link>
+          <Link to="the_matches">
+            <Button color="inherit">Matches</Button>
+          </Link>
+        </Toolbar>
       </AppBar>
     </div>
   );
