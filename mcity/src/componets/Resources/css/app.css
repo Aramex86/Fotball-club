@@ -172,9 +172,34 @@ button {
   left: 5%;
 }
 
+@media screen and (max-width: 770px) {
+  .signIn {
+    margin-left: 71px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .signIn {
+    font-size: 18px;
+    margin-left: 71px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .signIn {
+    font-size: 13px;
+   
+  }
+}
+@media screen and (max-width: 375px) {
+  .signIn {
+    font-size: 13px;
+   
+  }
+}
+
 .signIn h5 {
   margin: 0;
   animation:blick 5s infinite;
+  font-size: 20px;
 }
 
 @keyframes blick{
@@ -1152,11 +1177,21 @@ footer .footer_discl {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2,min-content);
 }
+@media screen and (max-width: 770px) {
+  .signin_wrapper {
+    grid-column: 3/4;
+    display: grid;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    grid-row: 3/3;
+  }
+}
 @media screen and (max-width: 425px) {
   .signin_wrapper {
     margin: 0;
     padding: 40px 0;
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-direction: column;
   }
@@ -1165,7 +1200,7 @@ footer .footer_discl {
   .signin_wrapper {
     margin: 0;
     padding: 40px 0;
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-direction: column;
   }
@@ -1207,6 +1242,12 @@ footer .footer_discl {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+}
+@media screen and (max-width: 770px) {
+  .authhint-wrapper {
+    grid-row:3/3;
+    grid-column: 3/4;
+  }
 }
 
 .authhint-wrapper span{
