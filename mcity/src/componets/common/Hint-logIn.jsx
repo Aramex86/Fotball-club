@@ -14,9 +14,10 @@ const HintLogIn = (props) => {
   });
 
   return (
-    <div className="signIn">
+    <div className="signIn" >
+      <h5 onClick={() => activateHint()} style={{position:'relative'}}>hint</h5>
       <span
-        style={{ opacity: show ? "5" : "0", transition: "all .5s ease" }}
+        style={{ opacity: show ? "5" : "0", transition: "all .5s ease", }}
       >
         Type in adress line : https://mcity-9a9e9.web.app/
         <i style={{ color: "#5f2b2b" }}>
@@ -25,7 +26,6 @@ const HintLogIn = (props) => {
           </span>
         </i>
       </span>
-      <h5 onClick={() => activateHint()}>hint</h5>
     </div>
   );
 };

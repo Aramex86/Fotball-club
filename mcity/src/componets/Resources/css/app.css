@@ -12,6 +12,11 @@ a {
 .link_logo {
   display: inline-block;
 }
+@media screen and (max-width: 425px) {
+  .link_logo {
+   margin-left: 18px;
+  }
+}
 
 .bck_blue {
   background: #0d1831;
@@ -174,18 +179,21 @@ button {
 
 @media screen and (max-width: 770px) {
   .signIn {
-    margin-left: 71px;
+    margin-left: 94px;
   }
 }
 @media screen and (max-width: 600px) {
   .signIn {
     font-size: 18px;
-    margin-left: 71px;
+    margin-left: 94px;
   }
 }
 @media screen and (max-width: 425px) {
   .signIn {
     font-size: 13px;
+    margin-left: 0;
+    left:0;
+    top:36px;
    
   }
 }

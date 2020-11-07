@@ -12,7 +12,7 @@ const AuthHint = () => {
     useEffect(() => {
         setTimeout(() => {
             setShowHint(false);
-        }, 4000);
+        }, 5000);
       });
 
     return (

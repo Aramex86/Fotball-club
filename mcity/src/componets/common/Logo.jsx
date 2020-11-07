@@ -8,7 +8,8 @@ const Logo =(props)=> {
      className='img_cover'
       style={{width:props.width,
         height:props.height,
-        background:`url(${logo}) no-repeat`
+        background:`url(${logo}) no-repeat`,
+        position:'relative'
       }}></div>
 
     if(props.link){
